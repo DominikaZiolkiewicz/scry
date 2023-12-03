@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define STEP 5
-//#define NUM 8
+#define NUM 8
 
 typedef struct{
 	int cnt;		//numer watku
@@ -14,11 +14,10 @@ typedef struct{
 
 
 /* Funkcja wykonywana przez watek */
-/*
-//void* start_routine (void* data){
+
+void* start_routine (void* data){
 	int i, id;
 
-	//id = (int)arg;
 
 	thread_data * get_data = (thread_data*)data;
 	int cnt = get_data->cnt;
@@ -27,18 +26,18 @@ typedef struct{
 	printf("msg: %s\n", msg);
 
 	/* Wyswietl nr watku i krok */
-	/*for(i = 0; i < STEP; i++)
+	for(i = 0; i < STEP; i++)
 	{
-		printf("\tWatek: %d, step = %d\n", id, i);
+		printf("\tWatek: %d, step = %d\n", cnt, i);
 		sleep(1);
-	}*/
-	//pthread_exit(NULL);
-//}*/*/*/
+	}
+	pthread_exit(NULL);
+}
 
 
 /* Program glowny */
 
-/*
+
 int main ()
 {
 
@@ -82,11 +81,11 @@ int main ()
 			exit(1);
 		}
 
-		//printf("watek glowny dolacyzl watek %d o statusie %d\n", i, (int)status);
+		printf("watek glowny dolacyzl watek %d o statusie %d\n", i, (int)status);
 	}
 
-	//printf("watek glowny zakonczony\n");
+	printf("watek glowny zakonczony\n");
 	pthread_exit(NULL);
 }
-*/
+
 

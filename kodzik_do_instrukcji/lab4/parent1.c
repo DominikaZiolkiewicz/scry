@@ -10,7 +10,9 @@
 int main()
 {
   int pid, i, res, status;
-  res = spawnl(P_NOWAIT,"potomny","potomny","10",NULL);
+  res = spawnl(P_NOWAIT,"potomny","potomny","10",NULL); //uzywamy dwa razy "potomny" bo pierwszy argument to nazwa procesu
+  // stad potem wywolanie argumentu jest od argv[1] a nie 0
+
   if (res<0)
     {
       printf("blad wywolania procesu 'potomny'\n");
